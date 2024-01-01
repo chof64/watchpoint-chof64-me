@@ -60,8 +60,5 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "description": "This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.",
-  "main": "next.config.js",
-  "author": "",
   "license": "MIT"
 }
