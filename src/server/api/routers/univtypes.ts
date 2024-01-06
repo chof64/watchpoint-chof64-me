@@ -26,8 +26,8 @@ type UniverseTypes = {
   graphicID: string;
 };
 
-export const seedRouter = createTRPCRouter({
-  universeTypes: publicProcedure.query(async ({ ctx }) => {
+export const univTypesRouter = createTRPCRouter({
+  seed: publicProcedure.query(async ({ ctx }) => {
     const getLatest = async () => {
       const res = await fetch(
         "https://www.fuzzwork.co.uk/dump/latest/invTypes.csv",
@@ -68,18 +68,6 @@ export const seedRouter = createTRPCRouter({
         data: data,
       };
     };
-
-    /**
-     *
-     * FLOW:
-     *
-     * 1. Request comes in
-     * 2. Check if we have a cached version of the data.
-     * 3. If we do, and it's not expired, return it.
-     * 4. If we do, and it is expired, fetch a new version, update the cache, and return it.
-     * 5. If we don't, fetch a new version, update the cache, and return it.
-     *
-     */
 
     const timestamp: Date = new Date();
 
